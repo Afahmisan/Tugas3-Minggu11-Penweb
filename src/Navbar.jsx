@@ -13,7 +13,7 @@ function Navbar({ searchQuery, onSearchChange, onAddClick, totalProducts }) {
                 <button
                     type="button"
                     onClick={onAddClick}
-                    className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition cursor-pointer"
+                    className="min-h-[44px] bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 >
                     + Tambah Produk
                 </button>
@@ -23,7 +23,8 @@ function Navbar({ searchQuery, onSearchChange, onAddClick, totalProducts }) {
             <div className="flex items-center justify-between gap-4">
                 <div className="relative w-full max-w-xs">
                     <svg
-                        className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                        aria-hidden="true"
+                        className="w-4 h-4 text-gray-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -38,10 +39,11 @@ function Navbar({ searchQuery, onSearchChange, onAddClick, totalProducts }) {
 
                     <input
                         type="text"
+                        aria-label="Cari nama produk"
                         value={searchQuery}
                         onChange={(e) => onSearchChange(e.target.value)}
                         placeholder="Cari nama produk..."
-                        className="w-full pl-9 pr-4 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full min-h-[44px] pl-9 pr-4 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
                     />
                 </div>
 

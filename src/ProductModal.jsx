@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { validateProductInput } from './utils/productUtils';
 
 function ProductModal({ product, onClose, onSave }) {
     const isEdit = Boolean(product);
@@ -23,29 +24,13 @@ function ProductModal({ product, onClose, onSave }) {
     function handleSubmit(e) {
         e.preventDefault();
 
-        const trimmedName = name.trim();
-        if (!trimmedName) {
-            setError('Nama produk wajib diisi.');
+        const result = validateProductInput(name, price);
+        if (result.error) {
+            setError(result.error);
             return;
         }
 
-        if (price.trim() === '') {
-            setError('Harga produk wajib diisi.');
-            return;
-        }
-
-        const parsedPrice = Number(price);
-        if (!Number.isFinite(parsedPrice) || parsedPrice <= 0) {
-            setError('Harga harus lebih dari 0.');
-            return;
-        }
-
-        if (!Number.isInteger(parsedPrice)) {
-            setError('Harga harus berupa angka bulat.');
-            return;
-        }
-
-        onSave({ name: trimmedName, price: parsedPrice });
+        onSave(result.data);
     }
 
     return (

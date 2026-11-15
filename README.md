@@ -71,10 +71,22 @@ Pengecekan terakhir mencatat 3 dari 3 unit test di `tests/productUtils.test.js` 
 | Hapus produk dan tombol `Escape` | `Escape` menutup modal tanpa menghapus; klik `Hapus Produk` menghapus item terpilih | Sesuai |
 | Tampilan mobile (`375x812`) | Kartu dan tombol tersusun vertikal tanpa scroll horizontal | Sesuai |
 
-| Modal Tambah Produk | Modal Edit Produk |
+| Modal Tambah Produk | Tampilan Mobile (`375x812`) |
 |---|---|
-| ![Modal Tambah Produk](evidence/02_tambah_produk_modal.png) | ![Modal Edit Produk](evidence/03_edit_produk_modal.png) |
+| ![Modal Tambah Produk](evidence/02_tambah_produk_modal.png) | ![Tampilan Mobile](evidence/05_mobile_view.png) |
 
-| Modal Konfirmasi Hapus | Tampilan Mobile (`375x812`) |
+### Bukti Before dan After (Edit dan Hapus Produk)
+
+Perubahan data saat mengedit `ID: 2` (`Buku Tulis`, `Rp12.000` menjadi `Buku Tulis Campus`, `Rp15.000`) serta saat menghapus `ID: 3` (`Spidol`, `Rp8.000`) ditunjukkan dalam urutan Before, Modal, dan After berikut.
+
+| Tahap Edit Produk | Tampilan |
 |---|---|
-| ![Modal Hapus Produk](evidence/04_hapus_produk_modal.png) | ![Tampilan Mobile](evidence/05_mobile_view.png) |
+| Before (`ID: 2` masih `Buku Tulis` `Rp12.000`) | ![Before Edit Produk](evidence/01_halaman_utama.png) |
+| Modal Edit Produk (`ID: 2`) | ![Modal Edit Produk](evidence/03_edit_produk_modal.png) |
+| After (`ID: 2` menjadi `Buku Tulis Campus` `Rp15.000`) | ![After Edit Produk](evidence/06_after_edit_produk.png) |
+
+| Tahap Hapus Produk | Tampilan |
+|---|---|
+| Before (`5 produk`, `ID: 3 Spidol` masih ada) | ![Before Hapus Produk](evidence/01_halaman_utama.png) |
+| Modal Konfirmasi Hapus (`ID: 3 Spidol`) | ![Modal Hapus Produk](evidence/04_hapus_produk_modal.png) |
+| After (`4 produk`, `ID: 3 Spidol` terhapus) | ![After Hapus Produk](evidence/07_after_hapus_produk.png) |

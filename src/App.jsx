@@ -58,15 +58,15 @@ function App() {
     }
 
     return (
-        <div className="min-h-screen bg-slate-50 text-gray-900">
-            <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-                <Navbar
-                    searchQuery={searchQuery}
-                    onSearchChange={setSearchQuery}
-                    onAddClick={openAddModal}
-                    totalProducts={products.length}
-                />
+        <div className="min-h-screen bg-[#F0F3F7] text-[#212121]">
+            <Navbar
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+                onAddClick={openAddModal}
+                totalProducts={products.length}
+            />
 
+            <main className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
                 {filteredProducts.length > 0 ? (
                     <section
                         aria-label="Daftar produk"
@@ -82,13 +82,13 @@ function App() {
                         ))}
                     </section>
                 ) : (
-                    <div className="bg-white border border-gray-200 rounded-xl p-8 text-center">
-                        <p className="text-sm font-medium text-gray-900">
+                    <div className="bg-white border border-[#E5E7E9] rounded-xl p-8 text-center">
+                        <p className="text-sm font-semibold text-[#212121]">
                             {products.length === 0
                                 ? 'Belum ada produk yang tersimpan.'
                                 : `Tidak ada produk dengan kata kunci "${searchQuery.trim()}".`}
                         </p>
-                        <p className="text-sm text-gray-500 mt-1">
+                        <p className="text-sm text-[#5B6270] mt-1">
                             {products.length === 0
                                 ? 'Tambahkan produk pertama Anda menggunakan tombol di bawah ini.'
                                 : 'Coba gunakan kata kunci lain atau tampilkan semua produk.'}
@@ -98,7 +98,7 @@ function App() {
                                 <button
                                     type="button"
                                     onClick={openAddModal}
-                                    className="min-h-[44px] px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                                    className="min-h-[44px] px-4 py-2 text-sm font-semibold text-white bg-[#008040] hover:bg-[#006B35] rounded-lg transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00AA5B]"
                                 >
                                     + Tambah Produk
                                 </button>
@@ -106,7 +106,7 @@ function App() {
                                 <button
                                     type="button"
                                     onClick={() => setSearchQuery('')}
-                                    className="min-h-[44px] px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-500 rounded-lg hover:bg-blue-50 transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                                    className="min-h-[44px] px-4 py-2 text-sm font-semibold text-[#008040] bg-white border border-[#008040] rounded-lg hover:bg-[#EBFBF1] transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00AA5B]"
                                 >
                                     Reset Pencarian
                                 </button>
@@ -116,7 +116,7 @@ function App() {
                 )}
 
                 <footer className="mt-6">
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-[#5B6270]">
                         Menampilkan {filteredProducts.length} dari {products.length} produk
                     </p>
                 </footer>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
+import DeleteModal from './DeleteModal';
 
 const INITIAL_PRODUCTS = [
     { id: 1, name: 'Pulpen', price: 5000 },
@@ -17,6 +18,7 @@ function App() {
     const [searchQuery, setSearchQuery] = useState('');
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [editingProduct, setEditingProduct] = useState(null);
+    const [deletingProduct, setDeletingProduct] = useState(null);
 
     const normalizedQuery = searchQuery.trim().toLowerCase();
     const filteredProducts = products.filter((product) =>
@@ -52,6 +54,11 @@ function App() {
         closeFormModal();
     }
 
+    function handleDeleteProduct(productId) {
+        setProducts((prev) => prev.filter((item) => item.id !== productId));
+        setDeletingProduct(null);
+    }
+
     return (
         <div className="min-h-screen bg-slate-50 text-gray-900">
             <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
@@ -72,7 +79,7 @@ function App() {
                                 key={product.id}
                                 product={product}
                                 onEdit={openEditModal}
-                                onDelete={() => {}}
+                                onDelete={setDeletingProduct}
                             />
                         ))}
                     </section>
@@ -123,6 +130,14 @@ function App() {
                     product={editingProduct}
                     onClose={closeFormModal}
                     onSave={handleSaveProduct}
+                />
+            )}
+
+            {deletingProduct && (
+                <DeleteModal
+                    product={deletingProduct}
+                    onClose={() => setDeletingProduct(null)}
+                    onConfirm={handleDeleteProduct}
                 />
             )}
         </div>

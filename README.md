@@ -1,16 +1,26 @@
-# React + Vite
+# Manajemen Produk (Tugas 3 - Pemrograman Web)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplikasi frontend React + Tailwind CSS untuk mengelola daftar produk dan harga sebagai lanjutan dari rangkaian tugas Manajemen Produk (Tugas 1 & Tugas 2).
 
-Currently, two official plugins are available:
+## Fitur
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Daftar Produk**: Menampilkan kartu produk berisi ID, nama produk, harga terformat (`Rp5.000`), dan tombol aksi `Edit` serta `Hapus`.
+- **Pencarian Real-Time**: Filter daftar produk berdasarkan nama produk beserta penghitung jumlah produk yang ditampilkan.
+- **Tambah Produk**: Pop-up modal form dengan validasi nama wajib diisi dan harga bilangan bulat lebih dari `0`.
+- **Edit Produk**: Pop-up modal yang terisi data produk terpilih beserta ID produk dan validasi input.
+- **Hapus Produk**: Pop-up konfirmasi penghapusan dengan preview detail produk sebelum dihapus.
 
-## React Compiler
+## Menjalankan Proyek
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+Perintah verifikasi:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm test
+npm run lint
+npm run build
+```

@@ -71,13 +71,19 @@ Pengecekan terakhir mencatat 3 dari 3 unit test di `tests/productUtils.test.js` 
 | Hapus produk dan tombol `Escape` | `Escape` menutup modal tanpa menghapus; klik `Hapus Produk` menghapus item terpilih | Sesuai |
 | Tampilan mobile (`375x812`) | Kartu dan tombol tersusun vertikal tanpa scroll horizontal | Sesuai |
 
-| Modal Tambah Produk | Tampilan Mobile (`375x812`) |
+| Halaman Utama (`1280x800`) | Tampilan Mobile (`375x812`) |
 |---|---|
-| ![Modal Tambah Produk](evidence/02_tambah_produk_modal.png) | ![Tampilan Mobile](evidence/05_mobile_view.png) |
+| ![Halaman Utama](evidence/01_halaman_utama.png) | ![Tampilan Mobile](evidence/05_mobile_view.png) |
 
-### Bukti Before dan After (Edit dan Hapus Produk)
+### Bukti Before dan After (Tambah, Edit, dan Hapus Produk)
 
-Perubahan data saat mengedit `ID: 2` (`Buku Tulis`, `Rp12.000` menjadi `Buku Tulis Campus`, `Rp15.000`) serta saat menghapus `ID: 3` (`Spidol`, `Rp8.000`) ditunjukkan dalam urutan Before, Modal, dan After berikut.
+Perubahan data saat menambah produk baru (`Map`, `Rp4.500`), mengedit `ID: 2` (`Buku Tulis`, `Rp12.000` menjadi `Buku Tulis Campus`, `Rp15.000`), serta menghapus `ID: 3` (`Spidol`, `Rp8.000`) ditunjukkan dalam urutan Before, Modal, dan After berikut.
+
+| Tahap Tambah Produk | Tampilan |
+|---|---|
+| Before (`5 produk` awal) | ![Before Tambah Produk](evidence/01_halaman_utama.png) |
+| Modal Tambah Produk | ![Modal Tambah Produk](evidence/02_tambah_produk_modal.png) |
+| After (`6 produk`, `ID: 6 Map` `Rp4.500` ditambahkan) | ![After Tambah Produk](evidence/08_after_tambah_produk.png) |
 
 | Tahap Edit Produk | Tampilan |
 |---|---|

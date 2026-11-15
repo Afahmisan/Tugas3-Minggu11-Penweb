@@ -35,7 +35,7 @@ function ProductModal({ product, onClose, onSave }) {
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-4"
             onClick={(e) => {
                 if (e.target === e.currentTarget) {
                     onClose();
@@ -46,17 +46,17 @@ function ProductModal({ product, onClose, onSave }) {
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="product-modal-title"
-                className="w-full max-w-md bg-white border border-gray-200 rounded-xl shadow-lg p-6"
+                className="w-full max-w-md bg-white border border-[#E5E7E9] rounded-xl shadow-xl p-6"
             >
                 <div className="flex items-start justify-between gap-4">
                     <div>
                         <h2
                             id="product-modal-title"
-                            className="text-lg font-bold text-gray-900"
+                            className="text-lg font-bold text-[#212121]"
                         >
                             {isEdit ? 'Edit Produk' : 'Tambah Produk'}
                         </h2>
-                        <p className="text-sm text-gray-500 mt-0.5">
+                        <p className="text-sm text-[#5B6270] mt-0.5">
                             {isEdit
                                 ? 'Perbarui informasi produk yang dipilih.'
                                 : 'Masukkan informasi produk baru.'}
@@ -67,7 +67,7 @@ function ProductModal({ product, onClose, onSave }) {
                         type="button"
                         onClick={onClose}
                         aria-label="Tutup modal"
-                        className="min-w-[44px] min-h-[44px] -mr-2 -mt-2 flex items-center justify-center rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                        className="min-w-[44px] min-h-[44px] -mr-2 -mt-2 flex items-center justify-center rounded-lg text-[#5B6270] hover:text-[#212121] hover:bg-gray-100 transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00AA5B]"
                     >
                         <svg
                             aria-hidden="true"
@@ -87,16 +87,16 @@ function ProductModal({ product, onClose, onSave }) {
                 </div>
 
                 {isEdit && (
-                    <p className="text-xs font-medium text-gray-500 mt-3">
+                    <span className="inline-block text-xs font-semibold text-[#007A3D] bg-[#EBFBF1] px-2 py-0.5 rounded-md mt-3">
                         ID: {product.id}
-                    </p>
+                    </span>
                 )}
 
                 <form onSubmit={handleSubmit} noValidate className="mt-4 space-y-4">
                     {error && (
                         <p
                             role="alert"
-                            className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-3 py-2"
+                            className="text-sm font-medium text-[#B81436] bg-[#FFF0F3] border border-[#FACDD7] rounded-lg px-3 py-2"
                         >
                             {error}
                         </p>
@@ -105,7 +105,7 @@ function ProductModal({ product, onClose, onSave }) {
                     <div>
                         <label
                             htmlFor="product-name"
-                            className="block text-sm font-medium text-gray-900 mb-1.5"
+                            className="block text-sm font-semibold text-[#212121] mb-1.5"
                         >
                             Nama Produk
                         </label>
@@ -119,14 +119,14 @@ function ProductModal({ product, onClose, onSave }) {
                                 if (error) setError('');
                             }}
                             placeholder="Contoh: Pulpen"
-                            className="w-full min-h-[44px] px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                            className="w-full min-h-[44px] px-3 py-2 bg-white border border-[#D1D5DB] rounded-lg text-sm text-[#212121] placeholder-[#5B6270] focus:outline-none focus:ring-2 focus:ring-[#00AA5B] focus:border-[#008040]"
                         />
                     </div>
 
                     <div>
                         <label
                             htmlFor="product-price"
-                            className="block text-sm font-medium text-gray-900 mb-1.5"
+                            className="block text-sm font-semibold text-[#212121] mb-1.5"
                         >
                             Harga (Rp)
                         </label>
@@ -141,9 +141,9 @@ function ProductModal({ product, onClose, onSave }) {
                                 if (error) setError('');
                             }}
                             placeholder="Contoh: 5000"
-                            className="w-full min-h-[44px] px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+                            className="w-full min-h-[44px] px-3 py-2 bg-white border border-[#D1D5DB] rounded-lg text-sm text-[#212121] placeholder-[#5B6270] focus:outline-none focus:ring-2 focus:ring-[#00AA5B] focus:border-[#008040]"
                         />
-                        <p className="text-xs text-gray-500 mt-1.5">
+                        <p className="text-xs text-[#5B6270] mt-1.5">
                             Harga harus lebih dari 0.
                         </p>
                     </div>
@@ -152,13 +152,13 @@ function ProductModal({ product, onClose, onSave }) {
                         <button
                             type="button"
                             onClick={onClose}
-                            className="min-h-[44px] px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                            className="min-h-[44px] px-4 py-2 text-sm font-semibold text-[#212121] bg-white border border-[#D1D5DB] rounded-lg hover:bg-[#F8FAFC] transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00AA5B]"
                         >
                             Batal
                         </button>
                         <button
                             type="submit"
-                            className="min-h-[44px] px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                            className="min-h-[44px] px-4 py-2 text-sm font-semibold text-white bg-[#008040] hover:bg-[#006B35] rounded-lg transition cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00AA5B]"
                         >
                             {isEdit ? 'Simpan Perubahan' : 'Simpan Produk'}
                         </button>

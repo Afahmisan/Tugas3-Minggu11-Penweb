@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
 import DeleteModal from './DeleteModal';
+import { filterProducts } from './utils/productUtils';
 
 const INITIAL_PRODUCTS = [
     { id: 1, name: 'Pulpen', price: 5000 },
@@ -20,10 +21,7 @@ function App() {
     const [editingProduct, setEditingProduct] = useState(null);
     const [deletingProduct, setDeletingProduct] = useState(null);
 
-    const normalizedQuery = searchQuery.trim().toLowerCase();
-    const filteredProducts = products.filter((product) =>
-        product.name.toLowerCase().includes(normalizedQuery)
-    );
+    const filteredProducts = filterProducts(products, searchQuery);
 
     function openAddModal() {
         setEditingProduct(null);
